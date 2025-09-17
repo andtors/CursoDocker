@@ -1,0 +1,27 @@
+docker run [container] | Instala e roda o container
+docker stop [container] | Para o container com o nome ou id
+docker ps | Lista todos os containers rodando na maquina
+docker ps -a| Lista todos os container que foram rodados
+docker run -d [container] | Roda o container no background
+docker run -p 80:80 [container] | Roda o container na porta especificada
+docker start [container] | Roda o container com o nome ou id
+docker run --name [apelido container] [container] | adiciona um nome personalizado ao container
+docker logs [container] | Verifica o log do container
+docker rm [container] | Remove containers -f força a remoção
+docker build -t [nome da imagem] [dir. da imagem]  | Cria o build da imagem
+docker run [imagem] | Roda a imagem
+docker pull [imagem] | Faz o download de uma imagem 	já existente no internet
+docker tag [imagem id] [novo nome] | Altera o nome de uma imagem existente
+docker images | Traz uma lista de imagens
+docker rmi [imagem] | Remove uma imagem
+docker system prune | Remove images e principalmente containers e seus logs
+docker run -rm [container] | Executa o container e remove ele após ser perado
+docker cp [container]:Local onde está o container ./Local onde irá ser copiado
+docker top [container] | Traz informações sobre o container
+docker inspect [container] | Traz informações sobre o container
+docker stats | Traz informações dos containers
+docker login ou logout | Faz login em sua conta do docker hub ou desloga uma conta
+
+Para enviar a imagem para o Docker Hub o processo é semelhante ao de um rep no github, precisamos criar um repo dele e executar o comando 
+docker push [rep. da imagem] | Manda a imagem para o repo no docker hub
+docker pull [rep. da imagem] | Baixa a imagem do repo no docker hub
