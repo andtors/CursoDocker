@@ -1,3 +1,5 @@
+Containers e Imagens
+
 docker run [container] | Instala e roda o container
 docker stop [container] | Para o container com o nome ou id
 docker ps | Lista todos os containers rodando na maquina
@@ -15,7 +17,7 @@ docker tag [imagem id] [novo nome] | Altera o nome de uma imagem existente
 docker images | Traz uma lista de imagens
 docker rmi [imagem] | Remove uma imagem
 docker system prune | Remove images e principalmente containers e seus logs
-docker run -rm [container] | Executa o container e remove ele após ser perado
+docker run -rm [container] | Executa o container e remove ele após ser parado
 docker cp [container]:Local onde está o container ./Local onde irá ser copiado
 docker top [container] | Traz informações sobre o container
 docker inspect [container] | Traz informações sobre o container
@@ -25,3 +27,16 @@ docker login ou logout | Faz login em sua conta do docker hub ou desloga uma con
 Para enviar a imagem para o Docker Hub o processo é semelhante ao de um rep no github, precisamos criar um repo dele e executar o comando 
 docker push [rep. da imagem] | Manda a imagem para o repo no docker hub
 docker pull [rep. da imagem] | Baixa a imagem do repo no docker hub
+
+Volumes
+
+docker run [container] -v  | Roda um container com um volume anonimo
+docker run [container] -v [vol. nome]:[dir. volume] | Roda um container com um volume nomeado 
+Ex: docker run -d -p 80:80 --name phpmessages_container -v D:\CursosProjetos\Cursos\Docker\CursoDocker\SC-4-Volumes\messages:/var/www/html/messages --rm phpmessages
+docker volume create [volume] | Cria um volume nomeado
+docker volume ls | Lista todos os volumes
+docker volume inspect [volume] | Inspeciona o volume
+docker volume rm [volume] | Remove o volume e seus dados
+docker volume prune | Remove todos os volumes
+docker run [container] -v [vol. nome]:[dir. volume]:ro | Roda um container com um volume nomeado apenas para leitura 
+ 
